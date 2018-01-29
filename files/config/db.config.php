@@ -23,7 +23,7 @@ $db_info = (object)array (
       'db_table_prefix' => 'xe_',
     ),
   ),
-  'default_url' => 'http://jhwon11.cafe24.com/',
+  'default_url' => 'http://won.wiki/',
   'use_mobile_view' => 'N',
   'use_rewrite' => 'Y',
   'time_zone' => '+0900',
@@ -84,4 +84,7 @@ $db_info = (object)array (
     8 => 'https://www.youtube-nocookie.com/',
     9 => 'https://www.youtube.com/',
   ),
+  'use_sso' => 'N',
+  'use_html5' => 'N',
+  'admin_ip_list' => NULL,
 );

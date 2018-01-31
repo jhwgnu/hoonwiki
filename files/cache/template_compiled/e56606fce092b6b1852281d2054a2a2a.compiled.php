@@ -95,7 +95,7 @@ if($__Context->val2['selected']){ ?>active<?php } ?>"<?php } ?>>
 						<?php if($__Context->li->navbar_member_point=='Y'){ ?>
 							<?php 
 								$__Context->member_srl = $__Context->logged_info->member_srl;
-								$__Context->oPointModel = getModel('point');   
+								$__Context->oPointModel = getModel('point');
 								$__Context->member_point = $__Context->oPointModel->getPoint($__Context->member_srl);
 							 ?>
 							<?php if($__Context->li->navbar_member_point=='Y2'){ ?>
@@ -228,7 +228,7 @@ if($__Context->li->site_frame=='sidebar_content'){ ?> col-sm-pull-<?php echo 12-
 					</div>
 				</form>
 			</div>
-		</div>	
+		</div>
 	</div>
 </div><?php } ?>
 <?php if(!$__Context->is_logged && $__Context->li->navbar_login != 'N'){ ?><div id="modal-login" class="modal fade">
@@ -253,7 +253,6 @@ if($__Context->li->site_frame=='sidebar_content'){ ?> col-sm-pull-<?php echo 12-
 							if($__Context->val == 'google') $__Context->color = 'danger';
 							if($__Context->val == 'naver') $__Context->color = 'success';
 							if($__Context->val == 'kakao') $__Context->color = 'warning';
-							
 							$__Context->icon = $__Context->val;
 							if($__Context->icon == 'facebook') $__Context->icon = 'facebook-official';
 							if($__Context->icon == 'naver') $__Context->icon = 'graduation-cap';
@@ -278,7 +277,7 @@ echo $__Context->lang->user_id;
 } ?>" class="form-control" required /></div>
 					<div class="form-group"><input type="password" name="password" id="upw" value="" placeholder="<?php echo $__Context->lang->password ?>" class="form-control" required /></div>
 					<div class="form-group">
-						<input type="checkbox" name="keep_signed" value="Y" onclick="if(this.checked) return confirm('<?php echo $__Context->lang->about_keep_signed ?>');" /> 
+						<input type="checkbox" name="keep_signed" value="Y" onclick="if(this.checked) return confirm('<?php echo $__Context->lang->about_keep_signed ?>');" />
 						<label for="keep_signed" onclick="jQuery('#modal-login input[name=\'keep_signed\']').click();" style="font-weight: normal">
 							<?php echo $__Context->lang->keep_signed ?>
 						</label>
@@ -321,7 +320,7 @@ if($__Context->key!= $__Context->lang_type){ ?>
 } ?>
 	   			</ul>
 			</li><?php } ?>
-			<?php if($__Context->li->premium != 'Y'){ ?><li><a href="http://www.wincomi.com" target="_blank" rel="nofollow"><i class="fa fa-check" aria-hidden="true"></i> Layout by Wincomi</a></li><?php } ?>
+			<?php if($__Context->li->premium != 'Y'){ ?><li><i>Jonghun Won</i></li><?php } ?>
 		</ul>
 	</div>
 	<?php if($__Context->li->footer_bottom){ ?><div class="footer_bottom"><?php echo $__Context->li->footer_bottom ?></div><?php } ?>

@@ -71,39 +71,6 @@
 						</form>
 					</div>
 				</li> -->
-				<li class="dropdown" id="dropdown-toggle-login" cond="!$is_logged && $li->navbar_login != 'N'">
-					<a href="#" data-toggle="modal" data-target="#modal-login"><i class="fa fa-sign-in" aria-hidden="true"></i> {$lang->cmd_login}</a>
-				</li>
-				<li cond="$is_logged && $li->navbar_login != 'N'" class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><!--@if($logged_info->profile_image->src)--><img src="{$logged_info->profile_image->src}" alt="" class="img-circle" /><!--@else--><i class="fa fa-user" aria-hidden="true"></i><!--@end--> {$logged_info->nick_name}</a>
-					<ul class="dropdown-menu">
-						<li id="profile-in-navbar" cond="$logged_info->profile_image->src">
-							<a href="{getURL('act','dispMemberInfo')}">
-								<img src="{$logged_info->profile_image->src}" class="img-circle" alt="Profile Image" cond="$logged_info->profile_image->src" /> <strong>{$logged_info->nick_name}</strong>
-							</a>
-						</li>
-						<block cond="$li->navbar_member_point=='Y'">
-							{@
-								$member_srl = $logged_info->member_srl;
-								$oPointModel = getModel('point');
-								$member_point = $oPointModel->getPoint($member_srl);
-							}
-							<block cond="$li->navbar_member_point=='Y2'">
-							{@
-								$oCashModel = getModel('cash');
-								$member_cash = $oCashModel->getCash($member_srl);
-							}
-							</block>
-							<li class="dropdown-header text-center">{$member_point} {$lang->point}</li>
-							<li class="dropdown-header text-center" cond="$li->navbar_member_point=='Y2'">{$member_cash} 캐쉬</li>
-							<li role="separator" class="divider"></li>
-						</block>
-						<li loop="$logged_info->menu_list=>$key, $val"><a href="{getUrl('act',$key,'member_srl','')}">{Context::getLang($val)}</a></li>
-						<li role="separator" class="divider"></li>
-						<li><a href="{getUrl('act','dispMemberLogout')}"><i class="fa fa-sign-out" aria-hidden="true"></i> {$lang->cmd_logout}</a></li>
-						<li cond="$logged_info->is_admin=='Y'"><a href="{getUrl('','module','admin')}" target="_blank"><i class="fa fa-cog" aria-hidden="true"></i> {$lang->cmd_management}</a></li>
-					</ul>
-				</li>
 			</ul>
 		</div>
 	</div>

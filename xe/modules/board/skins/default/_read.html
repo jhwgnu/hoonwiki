@@ -89,7 +89,7 @@
 			<img cond="$oDocument->getProfileImage()" src="{$oDocument->getProfileImage()}" alt="Profile" class="pf" />
 			<div cond="$oDocument->getSignature()" class="tx">{$oDocument->getSignature()}</div>
 		</div>
-		<div class="btnArea"> 
+		<div class="btnArea">
 			<a cond="$oDocument->isEditable()" class="btn" href="{getUrl('act','dispBoardWrite','document_srl',$oDocument->document_srl,'comment_srl','')}">{$lang->cmd_modify}</a>
 			<a cond="$oDocument->isEditable()" class="btn" href="{getUrl('act','dispBoardDelete','document_srl',$oDocument->document_srl,'comment_srl','')}">{$lang->cmd_delete}</a>
 			<span class="etc">
@@ -102,4 +102,4 @@
 <block cond="$oDocument->allowTrackback()">
 	<include target="_trackback.html" />
 </block>
-<include target="_comment.html" />
+<!-- <include target="_comment.html" /> -->

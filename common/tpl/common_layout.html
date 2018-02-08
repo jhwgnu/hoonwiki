@@ -16,7 +16,8 @@
 <meta http-equiv="{$val['name']}"|cond="$val['is_http_equiv']" name="{$val['name']}"|cond="!$val['is_http_equiv']" content="{$val['content']}">
 </block>
 <!-- TITLE -->
-<title>{Context::getBrowserTitle()}</title>
+<!-- <title>{Context::getBrowserTitle()}</title> -->
+<title>"wonwiki"</title>
 <!-- CSS -->
 <block loop="$css_files=>$key,$css_file">
 <block cond="$css_file['targetie']"><!--[if {$css_file['targetie']}]><block cond="stripos($css_file['targetie'], 'gt') === 0"><!--></block></block>

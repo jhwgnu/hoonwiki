@@ -69,7 +69,7 @@ if($__Context->val2['selected']){ ?>active<?php } ?>"<?php } ?>>
 				<button type="submit" class="sr-only btn btn-<?php echo $__Context->colorset ?> btn-block"><i class="fa fa-search" aria-hidden="true"></i> <?php echo $__Context->lang->cmd_search ?></button>
 			</form><?php } ?>
 			<ul class="navbar-nav nav">
-				<?php if($__Context->li->navbar_search!='N' && $__Context->li->navbar_search!='Y2'){ ?><li class="dropdown" id="dropdown-toggle-search">
+				<!-- <?php if($__Context->li->navbar_search!='N' && $__Context->li->navbar_search!='Y2'){ ?><li class="dropdown" id="dropdown-toggle-search">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-search" aria-hidden="true"></i><span class="visible-xs-inline-block"> <?php echo $__Context->lang->cmd_search ?></span></a>
 					<div class="dropdown-menu dropdown-form" role="search">
 						<form action="<?php echo getUrl() ?>" method="get"><input type="hidden" name="error_return_url" value="<?php echo htmlspecialchars(getRequestUriByServerEnviroment(), ENT_COMPAT | ENT_HTML401, 'UTF-8', false) ?>" />
@@ -80,7 +80,7 @@ if($__Context->val2['selected']){ ?>active<?php } ?>"<?php } ?>>
 							<button type="submit" class="sr-only btn btn-<?php echo $__Context->colorset ?> btn-block"><i class="fa fa-search" aria-hidden="true"></i> <?php echo $__Context->lang->cmd_search ?></button>
 						</form>
 					</div>
-				</li><?php } ?>
+				</li><?php } ?> -->
 				<?php if(!$__Context->is_logged && $__Context->li->navbar_login != 'N'){ ?><li class="dropdown" id="dropdown-toggle-login">
 					<a href="#" data-toggle="modal" data-target="#modal-login"><i class="fa fa-sign-in" aria-hidden="true"></i> <?php echo $__Context->lang->cmd_login ?></a>
 				</li><?php } ?>

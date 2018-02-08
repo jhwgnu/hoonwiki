@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon version="0.2">
+	<title xml:lang="ko">타이틀 제어 애드온 Ver2</title>
+	<description xml:lang="ko">페이지의 타이틀을 일괄적으로 편하게 제어합니다.</description>
+	<version>2.1.0</version>
+	<date>2012-12-25</date>
+	<link>http://www.youhogeon.com</link>
+	<author email_address="idog@youhogeon.com" link="http://www.youhogeon.com">
+		<name xml:lang="ko">유호건</name>
+	</author>
+	<extra_vars>
+		<var name="type" type="select">
+			<title xml:lang="ko">타이틀 제어 방법</title>
+			<options value="forward">
+				<title xml:lang="ko">[기존 타이틀] 앞에 [가상타이틀1] 을 붙여서 출력</title>
+			</options>
+			<options value="backward">
+				<title xml:lang="ko">[기존 타이틀] 뒤에 [가상타이틀1] 을 붙여서 출력</title>
+			</options>
+			<options value="only1">
+				<title xml:lang="ko">[가상타이틀1] 만 고정적으로 출력</title>
+			</options>
+			<options value="random">
+				<title xml:lang="ko">[가상타이틀1] 과 [가상타이틀2]를 랜덤으로 출력</title>
+			</options>
+			<options value="all">
+				<title xml:lang="ko">[기존타이틀] 앞에 [가상타이틀1]을, 뒤에는 [가상타이틀2]를 붙여서 출력</title>
+			</options>
+			<description xml:lang="ko"><![CDATA[
+타이틀을 나열할 순서를 선택해주세요.<br />
+기본값은 [ 기존 타이틀 앞에 가상타이틀을 붙여서 출력 ] 입니다.<br />
+
+<hr /><h2 style="margin:0;padding:0;">★ 사용법 ★</h2>
+＊타이틀 제어 에드온을 다운로드해주셔서 진심으로 감사드립니다.
+타이틀 제어 에드온은 유저분들이 보다 손쉽게 사용하실수 있도록 관리자페이지에 사용법을 출력하고있습니다.
+이 설명서를 꼼꼼하게 읽으셨다면 아마 손쉽게 이 애드온을 사용하실수 있으실껍니다.
+설명서를 꼼꼼히 읽었는데도 이해가 되지 않으시면 idog@youhogeon.com 으로 문의하시면 신속하고 친절하게 답변해드리겠습니다.
+자, 이제 아래의 사용법을 마저 읽고 이 에드온을 사용해보세요.<br />
+＊가상타이틀이란, <b>에드온에서 설정하는 가상의 타이틀입니다.</b>
+이 가상의 타이틀이 어디에 어떻게 출력되느냐는, 위에있는 타이틀 제어방법에서 여러분이 선택하실수 있습니다.<br />
+＊가상타이틀에는 <b>치환자</b>를 사용할 수 있습니다.
+치환자에는 %id%, %nick%, %name%, %point%, %level% 가 있으며 각각 아이디,닉네임,이름,포인트,레벨 을 치환합니다.<br />
+＊각각의 가상타이틀에는 <b>/%/ 라는 특별한 문자</b>를 사용할 수 있습니다.
+/%/를 기준으로 가상타이틀은 여러도막으로 잘리게되며, 여러도막중 한 도막이 무작위로 선택되어서 출력됩니다.
+예를들어 "안녕하세요/%/반갑습니다/%/환영합니다" 라는것을 가상타이틀1에 입력하였다면
+가상타이틀1이 출력될 자리에는 안녕하세요, 반갑습니다, 환영합니다 중 하나가 무작위로 출력됩니다.<br />
+
+<hr /><h2 style="margin:0;padding:0;">★ 자주묻는 질문 ★</h2>
+Q. 타이틀이 뭔가요?<br />
+A. 타이틀은 브라우저에 표시되는 페이지 제목입니다. 네이버의 경우 <u>네이버 :: 나의경쟁력, 네이버</u> 가 타이틀입니다.<br />
+이 애드온은 기존의 타이틀을 손쉽게 변형시키고 제어할수 있는 애드온입니다.<br />
+예를들어 가상타이틀1에 ~☆ 이라는 문자를 입력하고 타이틀 제어방법에서 "[기존 타이틀] 뒤에 [가상타이틀1] 을 붙여서 출력" 을 선택하였다면<br />
+브라우저에 표시되는 타이틀은 <u>네이버 :: 나의 경쟁력, 네이버~☆</u> 가 됩니다.
+		 ]]></description>
+	</var>
+
+		<var name="vtitle1" type="text">
+			<title xml:lang="ko">가상타이틀 1</title>
+			<description xml:lang="ko">타이틀 제어에 사용되는 첫번째 가상 타이틀입니다.</description>
+		</var>
+
+		<var name="vtitle2" type="text">
+			<title xml:lang="ko">가상타이틀 2</title>
+			<description xml:lang="ko">타이틀 제어에 사용되는 두번째 가상 타이틀입니다.</description>
+		</var>
+	
+	<var name="isadmin" type="select">
+			<title xml:lang="ko">관리자페이지 출력여부</title>
+			<options value="all">
+				<title xml:lang="ko">관리자페이지에도 이 애드온을 사용함.</title>
+			</options>
+			<options value="notadmin">
+				<title xml:lang="ko">관리자페이지에는 사용하지 않음.</title>
+			</options>
+			<options value="onlyadmin">
+				<title xml:lang="ko">관리자페이지에만 사용함</title>
+			</options>
+			<description xml:lang="ko">관리자페이지에 이 에드온을 작동시키실껀가요?(기본값은 관리자페이지에도 사용 입니다.)</description>
+	</var>
+	
+	<var name="permission" type="select">
+			<title xml:lang="ko">사용 권한</title>
+			<options value="all">
+				<title xml:lang="ko">모두에게 이 에드온을 적용</title>
+			</options>
+			<options value="memberonly">
+				<title xml:lang="ko">로그인한 맴버에게만 이 에드온을 적용</title>
+			</options>
+			<options value="notmember">
+				<title xml:lang="ko">비회원에게만 이 에드온을 적용</title>
+			</options>
+			<description xml:lang="ko">이 에드온을 누구에게 적용시키실껀가요?(기본값은 모두입니다.)</description>
+	</var>
+	
+	<var name="striptag" type="select">
+			<title xml:lang="ko">태그제거</title>
+			<options value="N">
+				<title xml:lang="ko">제거안함</title>
+			</options>
+			<options value="Y">
+				<title xml:lang="ko">제거</title>
+			</options>
+			<description xml:lang="ko">타이틀에 태그가 포함될시, 제거하시겠습니까?(기본값은 제거안함 입니다.)</description>
+	</var>
+	</extra_vars>
+</addon> 

@@ -1,3 +1,3 @@
 <?php
 if(!defined('__XE__')) { exit(); }
-return 'a:2:{s:15:\"site_and_module\";i:96;s:6:\"member\";i:1;}';
+return 'a:2:{s:15:\"site_and_module\";i:111;s:6:\"member\";i:1;}';

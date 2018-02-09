@@ -133,9 +133,9 @@ echo $__Context->no;
 </div>
 <div class="list_footer">
 	<div class="btnArea">
-		<a href="<?php echo getUrl('act','dispBoardWrite','document_srl','') ?>" class="btn"><i class="xi-pen"></i> <?php echo $__Context->lang->cmd_write ?></a>
 		<a href="<?php echo getUrl('act','dispBoardTagList') ?>" class="btn" title="<?php echo $__Context->lang->tag ?>"><i class="xi-tag"></i> <?php echo $__Context->lang->tag ?></a>
-		<?php if($__Context->grant->manager){ ?><a class="btn" href="<?php echo getUrl('act','dispBoardAdminBoardInfo') ?>" title="<?php echo $__Context->lang->cmd_setup ?>"><i class="xi-cog"></i> <?php echo $__Context->lang->cmd_setup ?></a><?php } ?>			
+		<?php if($__Context->grant->manager){ ?><a href="<?php echo getUrl('act','dispBoardWrite','document_srl','') ?>" class="btn"><i class="xi-pen"></i> <?php echo $__Context->lang->cmd_write ?></a><?php } ?>
+		<?php if($__Context->grant->manager){ ?><a class="btn" href="<?php echo getUrl('act','dispBoardAdminBoardInfo') ?>" title="<?php echo $__Context->lang->cmd_setup ?>"><i class="xi-cog"></i> <?php echo $__Context->lang->cmd_setup ?></a><?php } ?>
 		<?php if($__Context->grant->manager){ ?><a href="<?php echo getUrl('','module','document','act','dispDocumentManageDocument') ?>" class="btn" onclick="popopen(this.href,'manageDocument'); return false;"><?php echo $__Context->lang->cmd_manage_document ?></a><?php } ?>
 	</div>
 	<?php if($__Context->grant->view){ ?><form action="<?php echo getUrl() ?>" method="get" onsubmit="return procFilter(this, search)" id="board_search" class="board_search" ><input type="hidden" name="act" value="<?php echo $__Context->act ?>" />
@@ -153,9 +153,9 @@ echo $__Context->no;
         <?php if($__Context->last_division){ ?><a href="<?php echo getUrl('page',1,'document_srl','','division',$__Context->last_division,'last_division','') ?>" class="btn"><?php echo $__Context->lang->cmd_search_next ?></a><?php } ?>
 	</form><?php } ?>
 	<?php if($__Context->document_list || $__Context->notice_list){ ?><div class="pagination">
-		<a href="<?php echo getUrl('page','','document_srl','','division',$__Context->division,'last_division',$__Context->last_division) ?>" class="direction prev"><i class="xi-angle-left"></i>&nbsp;<?php echo $__Context->lang->first_page ?></a> 
+		<a href="<?php echo getUrl('page','','document_srl','','division',$__Context->division,'last_division',$__Context->last_division) ?>" class="direction prev"><i class="xi-angle-left"></i>&nbsp;<?php echo $__Context->lang->first_page ?></a>
 		<?php while($__Context->page_no=$__Context->page_navigation->getNextPage()){ ?>
-			<?php if($__Context->page==$__Context->page_no){ ?><strong><?php echo $__Context->page_no ?></strong><?php } ?> 
+			<?php if($__Context->page==$__Context->page_no){ ?><strong><?php echo $__Context->page_no ?></strong><?php } ?>
 			<?php if($__Context->page!=$__Context->page_no){ ?><a href="<?php echo getUrl('page',$__Context->page_no,'document_srl','','division',$__Context->division,'last_division',$__Context->last_division) ?>"><?php echo $__Context->page_no ?></a><?php } ?>
 		<?php } ?>
 		<a href="<?php echo getUrl('page',$__Context->page_navigation->last_page,'document_srl','','division',$__Context->division,'last_division',$__Context->last_division) ?>" class="direction next"><?php echo $__Context->lang->last_page ?>&nbsp;<i class="xi-angle-right"></i></a>

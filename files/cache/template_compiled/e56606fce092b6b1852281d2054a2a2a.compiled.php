@@ -81,39 +81,6 @@ if($__Context->val2['selected']){ ?>active<?php } ?>"<?php } ?>>
 						</form>
 					</div>
 				</li><?php } ?> -->
-				<?php if(!$__Context->is_logged && $__Context->li->navbar_login != 'N'){ ?><li class="dropdown" id="dropdown-toggle-login">
-					<a href="#" data-toggle="modal" data-target="#modal-login"><i class="fa fa-sign-in" aria-hidden="true"></i> <?php echo $__Context->lang->cmd_login ?></a>
-				</li><?php } ?>
-				<?php if($__Context->is_logged && $__Context->li->navbar_login != 'N'){ ?><li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php if($__Context->logged_info->profile_image->src){ ?><img src="<?php echo $__Context->logged_info->profile_image->src ?>" alt="" class="img-circle" /><?php }else{ ?><i class="fa fa-user" aria-hidden="true"></i><?php } ?> <?php echo $__Context->logged_info->nick_name ?></a>
-					<ul class="dropdown-menu">
-						<?php if($__Context->logged_info->profile_image->src){ ?><li id="profile-in-navbar">
-							<a href="<?php echo getURL('act','dispMemberInfo') ?>">
-								<?php if($__Context->logged_info->profile_image->src){ ?><img src="<?php echo $__Context->logged_info->profile_image->src ?>" class="img-circle" alt="Profile Image" /><?php } ?> <strong><?php echo $__Context->logged_info->nick_name ?></strong>
-							</a>
-						</li><?php } ?>
-						<?php if($__Context->li->navbar_member_point=='Y'){ ?>
-							<?php 
-								$__Context->member_srl = $__Context->logged_info->member_srl;
-								$__Context->oPointModel = getModel('point');
-								$__Context->member_point = $__Context->oPointModel->getPoint($__Context->member_srl);
-							 ?>
-							<?php if($__Context->li->navbar_member_point=='Y2'){ ?>
-							<?php 
-								$__Context->oCashModel = getModel('cash');
-								$__Context->member_cash = $__Context->oCashModel->getCash($__Context->member_srl);
-							 ?>
-							<?php } ?>
-							<li class="dropdown-header text-center"><?php echo $__Context->member_point ?> <?php echo $__Context->lang->point ?></li>
-							<?php if($__Context->li->navbar_member_point=='Y2'){ ?><li class="dropdown-header text-center"><?php echo $__Context->member_cash ?> 캐쉬</li><?php } ?>
-							<li role="separator" class="divider"></li>
-						<?php } ?>
-						<?php if($__Context->logged_info->menu_list&&count($__Context->logged_info->menu_list))foreach($__Context->logged_info->menu_list as $__Context->key=>$__Context->val){ ?><li><a href="<?php echo getUrl('act',$__Context->key,'member_srl','') ?>"><?php echo Context::getLang($__Context->val) ?></a></li><?php } ?>
-						<li role="separator" class="divider"></li>
-						<li><a href="<?php echo getUrl('act','dispMemberLogout') ?>"><i class="fa fa-sign-out" aria-hidden="true"></i> <?php echo $__Context->lang->cmd_logout ?></a></li>
-						<?php if($__Context->logged_info->is_admin=='Y'){ ?><li><a href="<?php echo getUrl('','module','admin') ?>" target="_blank"><i class="fa fa-cog" aria-hidden="true"></i> <?php echo $__Context->lang->cmd_management ?></a></li><?php } ?>
-					</ul>
-				</li><?php } ?>
 			</ul>
 		</div>
 	</div>

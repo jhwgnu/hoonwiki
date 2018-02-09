@@ -81,7 +81,7 @@ echo $__Context->oDocument->getNickName();
 						content : sTitle
 					});
 				});
-			</script>		    
+			</script>
 		</div>
 		<?php if($__Context->oDocument->hasUploadedFiles()){ ?><div class="fileList">
 			<button type="button" class="toggleFile" onclick="jQuery(this).next('ul.files').toggle();"><i class="xi-diskette"></i> <?php echo $__Context->lang->uploaded_file ?> [<strong><?php echo $__Context->oDocument->get('uploaded_count') ?></strong>]</button>
@@ -105,7 +105,7 @@ echo $__Context->file->download_url ?>"><?php echo $__Context->file->source_file
 			<?php if($__Context->oDocument->getProfileImage()){ ?><img src="<?php echo $__Context->oDocument->getProfileImage() ?>" alt="Profile" class="pf" /><?php } ?>
 			<?php if($__Context->oDocument->getSignature()){ ?><div class="tx"><?php echo $__Context->oDocument->getSignature() ?></div><?php } ?>
 		</div><?php } ?>
-		<div class="btnArea"> 
+		<div class="btnArea">
 			<?php if($__Context->oDocument->isEditable()){ ?><a class="btn" href="<?php echo getUrl('act','dispBoardWrite','document_srl',$__Context->oDocument->document_srl,'comment_srl','') ?>"><i class="xi-eraser"></i><?php echo $__Context->lang->cmd_modify ?></a><?php } ?>
 			<?php if($__Context->oDocument->isEditable()){ ?><a class="btn" href="<?php echo getUrl('act','dispBoardDelete','document_srl',$__Context->oDocument->document_srl,'comment_srl','') ?>"><i class="xi-trash"></i><?php echo $__Context->lang->cmd_delete ?></a><?php } ?>
 			<span class="etc">
@@ -118,4 +118,4 @@ echo $__Context->file->download_url ?>"><?php echo $__Context->file->source_file
 <?php if($__Context->oDocument->allowTrackback()){ ?>
 	<?php $__tpl=TemplateHandler::getInstance();echo $__tpl->compile('modules/board/skins/xedition','_trackback.html') ?>
 <?php } ?>
-<?php $__tpl=TemplateHandler::getInstance();echo $__tpl->compile('modules/board/skins/xedition','_comment.html') ?>
+<!-- <?php $__tpl=TemplateHandler::getInstance();echo $__tpl->compile('modules/board/skins/xedition','_comment.html') ?> -->

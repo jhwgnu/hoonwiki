@@ -17,7 +17,8 @@ $__Context->db_info   = Context::getDBInfo();
 if(!$__Context->val['is_http_equiv']){ ?> name="<?php echo $__Context->val['name'] ?>"<?php } ?> content="<?php echo $__Context->val['content'] ?>">
 <?php } ?>
 <!-- TITLE -->
-<title><?php echo Context::getBrowserTitle() ?></title>
+<!-- <title><?php echo Context::getBrowserTitle() ?></title> -->
+<title>wonwiki</title>
 <!-- CSS -->
 <?php if($__Context->css_files&&count($__Context->css_files))foreach($__Context->css_files as $__Context->key=>$__Context->css_file){ ?>
 <?php if($__Context->css_file['targetie']){ ?><!--[if <?php echo $__Context->css_file['targetie'] ?>]><?php if(stripos($__Context->css_file['targetie'], 'gt') === 0){ ?><!--><?php };

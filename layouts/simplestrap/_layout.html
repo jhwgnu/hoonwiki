@@ -4,9 +4,6 @@
 		<div class="navbar-header">
 			<span class="sr-only">{$lang->ss_toggle_navigation}</span>
 			<button type="button" class="navbar-toggle navbar-toggle-left" data-toggle="collapse" data-target="#main-navbar"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-			<button cond="!$is_logged && $li->navbar_login != 'N'" type="button" class="navbar-toggle" data-toggle="modal" data-target="#modal-login"><i class="fa fa-sign-in" aria-hidden="true"></i> {$lang->cmd_login}</button>
-			<button cond="$is_logged && $li->navbar_login != 'N'" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#sub-navbar"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></button>
-			<button cond="!$is_logged && $li->navbar_search != 'N'" type="button" class="navbar-toggle" data-toggle="modal" data-target="#modal-search"><i class="fa fa-search" aria-hidden="true"></i> {$lang->cmd_search}</button>
 				<a class="navbar-brand<!--@if($li->logo_img)--> navbar-logo-img<!--@end-->" href="<!--@if(!$li->index_url)-->http://www.wincomi.com<!--@else-->{$li->index_url}<!--@end-->">
 					<!--@if($li->logo_img)--><img src="{$li->logo_img}" alt="{$li->logo_title}" />
 					<!--@else-->
